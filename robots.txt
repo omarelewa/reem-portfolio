@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omarelewa.github.io/reem-portfolio/sitemap.xml

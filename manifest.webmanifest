@@ -1,0 +1,13 @@
+{
+  "name": "Reem Awad — Graphic Designer & Art Director",
+  "short_name": "Reem Awad",
+  "description": "Portfolio of Reem Awad — brand identity, packaging, art direction and Arabic type, designed in Cairo.",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#141210",
+  "theme_color": "#C24A22",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

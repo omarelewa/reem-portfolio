@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cairo Food Week — Festival design system case study · Reem Awad</title>
+<meta name="description" content="For one week, a whole city talks about food in a friendly green system of organic shapes and signage. A case study by Reem Awad, graphic designer in Cairo.">
+<link rel="canonical" href="https://omarelewa.github.io/reem-portfolio/cairo-food-week.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cairo Food Week — We connect over food">
+<meta property="og:description" content="For one week, a whole city talks about food in a friendly green system of organic shapes and signage. A case study by Reem Awad, graphic designer in Cairo.">
+<meta property="og:url" content="https://omarelewa.github.io/reem-portfolio/cairo-food-week.html">
+<meta property="og:image" content="https://omarelewa.github.io/reem-portfolio/assets/og/cairo-food-week.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#EFECDF">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="preload" as="script" href="vendor/react.production.min.js" crossorigin="anonymous">
+<link rel="preload" as="script" href="vendor/react-dom.production.min.js" crossorigin="anonymous">
+<link rel="preload" as="image" href="assets/foodweek-logo.webp">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<style>
+body{margin:0;background:#EFECDF;color:#123A2E;font-family:'Bricolage Grotesque',system-ui,sans-serif;--fd:'Bricolage Grotesque',system-ui,sans-serif;--fs:'Instrument Serif',Georgia,serif;--fm:'IBM Plex Mono',ui-monospace,monospace;--ac:#E85BA0;--nav-bg:rgba(14,45,36,.6);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+a{text-decoration:none;color:inherit}
+a:hover{opacity:.75}
+img{display:block}
+h1,h2,h3,h4,p{margin:0}
+button{font:inherit;border:none;background:none;cursor:pointer;color:inherit}
+::selection{background:var(--ac);color:#0E4A3A}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes rise{from{transform:translateY(115%)}to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blobf{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(8deg)}}
+</style>
+</helmet>
+
+<div class="cur" ref="{{ cursorRef }}"><span class="ring"></span><span class="lbl" ref="{{ lblRef }}">View</span></div>
+<div class="prog" ref="{{ progRef }}"></div>
+
+<nav class="nav">
+<a href="./" data-cursor="Home" style="font-weight:600;display:flex;align-items:center;gap:7px">Reem Awad <span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M4.2 4.2H19.8V19.8H4.2Z M12 1L23 12L12 23L1 12Z"/></svg></span></a>
+<div class="nav-links">
+<a href="./#work" data-cursor="Work">← All work</a>
+<a href="https://wa.me/201022966226" data-cursor="Chat" style="font-weight:600">WhatsApp ↗</a>
+</div>
+</nav>
+
+<section class="vh" style="position:relative;overflow:hidden;background:#0E4A3A;color:#EFECDF;display:flex;align-items:center">
+<div style="position:absolute;top:14%;right:9%;width:min(20vw,220px);aspect-ratio:1;background:var(--ac);border-radius:62% 38% 55% 45%/55% 58% 42% 45%;opacity:.9;animation:blobf 9s ease-in-out infinite"></div>
+<div style="position:absolute;bottom:16%;right:24%;width:min(11vw,130px);aspect-ratio:1;background:#EFECDF;border-radius:45% 55% 60% 40%/50% 45% 55% 50%;opacity:.85;animation:blobf 7s ease-in-out infinite .6s"></div>
+<div style="position:absolute;top:26%;right:30%;width:min(7vw,80px);aspect-ratio:1;background:#7FC9A6;border-radius:50%;animation:blobf 6s ease-in-out infinite .3s"></div>
+<div class="wrap" style="--wrap:1500px;position:relative;z-index:3;padding-top:120px;padding-bottom:60px">
+<div style="font-family:var(--fm);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;animation:fadeUp .9s ease .1s both">Festival — Design system · 2023</div>
+<h1 style="font-family:var(--fd);font-weight:800;font-size:clamp(56px,11vw,168px);line-height:.82;letter-spacing:-.03em;margin:14px 0 0;text-transform:uppercase">
+<span style="display:block;overflow:hidden"><span style="display:block;animation:rise 1.1s cubic-bezier(.2,.85,.15,1) .16s both">Cairo</span></span>
+<span style="display:block;overflow:hidden"><span style="display:block;animation:rise 1.1s cubic-bezier(.2,.85,.15,1) .26s both">Food</span></span>
+<span style="display:block;overflow:hidden"><span style="display:block;animation:rise 1.1s cubic-bezier(.2,.85,.15,1) .36s both;color:var(--ac)">Week</span></span>
+</h1>
+<p style="font-family:var(--fs);font-style:italic;font-size:clamp(23px,3vw,44px);margin-top:16px;animation:fadeUp 1s ease .55s both">We all connect over food.</p>
+</div>
+<div style="position:absolute;bottom:30px;left:48px;display:flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;z-index:3"><span style="animation:bob 2s ease-in-out infinite">↓</span> Scroll</div>
+</section>
+
+<section class="sec-s" style="background:#EFECDF;border-bottom:1px solid rgba(18,58,46,.14)">
+<div class="wrap" style="--wrap:1180px;display:flex;flex-wrap:wrap;gap:40px 80px">
+<div data-reveal style="flex:1;min-width:220px"><div style="font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:8px">Discipline</div><div style="font-family:var(--fd);font-weight:600;font-size:18px;line-height:1.5">Design system<br>Identity · Wayfinding</div></div>
+<div data-reveal style="flex:1;min-width:160px"><div style="font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:8px">Event</div><div style="font-family:var(--fd);font-weight:600;font-size:18px;line-height:1.5">7-day festival<br>Cairo, 2023</div></div>
+<div data-reveal style="flex:1;min-width:120px"><div style="font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:8px">Year</div><div style="font-family:var(--fd);font-weight:600;font-size:18px;line-height:1.5">2023</div></div>
+<div data-reveal style="flex:1;min-width:180px"><div style="font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:8px">Scope</div><div style="font-family:var(--fd);font-weight:600;font-size:18px;line-height:1.5">Identity, posters,<br>social, signage</div></div>
+</div>
+</section>
+
+<section class="sec" style="background:#EFECDF">
+<div class="wrap cols" style="--wrap:1180px;--cols:.8fr 1.2fr;--gap:70px">
+<h2 data-reveal class="sticky-label" style="font-family:var(--fm);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#0E7A54">01 — The brief</h2>
+<div>
+<p data-reveal style="font-family:var(--fs);font-style:italic;font-size:clamp(28px,3.6vw,46px);line-height:1.24;letter-spacing:-.01em">For one week, a whole city talks about food. It needed a single language everyone could read — on a poster, a phone, or a hanging sign.</p>
+<p data-reveal style="font-family:var(--fd);font-size:clamp(17px,1.7vw,19px);line-height:1.62;margin-top:30px;max-width:52ch;color:rgba(18,58,46,.78)">Dozens of venues, talks and restaurants, one identity flexible enough to hold them all — warm, friendly, and unmistakably about coming together.</p>
+</div>
+</div>
+</section>
+
+<section class="sec" style="position:relative;background:#0E4A3A;color:#EFECDF;overflow:hidden">
+<div class="wrap" style="--wrap:1180px;position:relative;z-index:2">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:34px">
+<div data-reveal><div style="font-family:var(--fm);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac);margin-bottom:14px">The signature moment</div><h3 style="font-family:var(--fd);font-weight:800;font-size:clamp(28px,4vw,56px);letter-spacing:-.03em">One system, every surface.</h3></div>
+<div data-reveal style="font-family:var(--fm);font-size:12px;letter-spacing:.04em;opacity:.6;max-width:32ch;line-height:1.6">Flip through the toolkit — same DNA on a poster, a stage, a sign, a feed.</div>
+</div>
+<div data-reveal style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px">
+<sc-for list="{{ tabChips }}" as="s" hint-placeholder-count="5">
+<button onClick="{{ s.onClick }}" data-cursor="{{ s.name }}" style="font-family:var(--fm);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px;border-radius:100px;border:1px solid {{ s.border }};background:{{ s.chipBg }};color:{{ s.chipFg }};transition:background .3s,color .3s,border-color .3s,transform .2s" style-hover="transform:translateY(-2px)">{{ s.name }}</button>
+</sc-for>
+</div>
+<div data-reveal style="border-radius:20px;overflow:hidden;background:#083226;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)">
+<div style="aspect-ratio:16/9;background-image:{{ feImg }};background-position:{{ fePos }};background-size:{{ feSize }};background-repeat:no-repeat;background-color:{{ feBg }};transition:background-position .5s ease,background-size .5s ease"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 28px;flex-wrap:wrap">
+<div style="font-family:var(--fd);font-weight:700;font-size:20px">{{ feName }}</div>
+<div style="font-family:var(--fs);font-style:italic;font-size:19px;color:#B7E8CF;opacity:.95">{{ feCap }}</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" style="background:#EFECDF">
+<div class="wrap" style="--wrap:1200px">
+<div data-reveal style="font-family:var(--fm);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#0E7A54;margin-bottom:16px">02 — The idea</div>
+<h2 data-reveal style="font-family:var(--fd);font-weight:800;font-size:clamp(34px,5vw,82px);line-height:.93;letter-spacing:-.035em;max-width:15ch;margin-bottom:24px">Food is the thing that brings us to the same table.</h2>
+<p data-reveal style="font-family:var(--fd);font-size:clamp(17px,1.7vw,19px);line-height:1.6;max-width:56ch;color:rgba(18,58,46,.78);margin-bottom:44px">So the marks are little organic food-shapes that keep meeting and overlapping — two dots become a plate, a plate becomes a conversation.</p>
+<div data-reveal style="display:flex;align-items:center;justify-content:center;gap:0;padding:40px;background:#0E4A3A;border-radius:20px;flex-wrap:wrap">
+<span style="width:74px;height:74px;background:var(--ac);border-radius:62% 38% 55% 45%/55% 58% 42% 45%"></span>
+<span style="width:74px;height:74px;background:#7FC9A6;border-radius:50%;margin-left:-18px"></span>
+<span style="width:96px;height:74px;background:#EFECDF;border-radius:50%;margin-left:-18px"></span>
+<span style="width:74px;height:74px;background:var(--ac);border-radius:45% 55% 60% 40%/50% 45% 55% 50%;margin-left:-18px"></span>
+<span style="width:74px;height:74px;background:#7FC9A6;border-radius:58% 42% 45% 55%/55% 50% 50% 45%;margin-left:-18px"></span>
+</div>
+</div>
+</section>
+
+<section class="sec" style="background:#0E4A3A;color:#EFECDF">
+<div class="wrap" style="--wrap:1200px">
+<div data-reveal style="font-family:var(--fm);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac);margin-bottom:16px">03 — The system</div>
+<h2 data-reveal style="font-family:var(--fd);font-weight:800;font-size:clamp(32px,4.4vw,62px);line-height:.98;letter-spacing:-.03em;max-width:20ch;margin-bottom:44px">A logotype that stacks like a plate of good things.</h2>
+<div data-reveal style="border-radius:18px;overflow:hidden;margin-bottom:24px"><img src="assets/foodweek-logo.webp" alt="The Cairo Food Week logotype, stacked like a plate of good things" data-lb style="width:100%;height:auto" loading="lazy" decoding="async"></div>
+<div class="cols" style="--cols:1fr 1fr;--gap:24px">
+<div data-reveal style="background:#083226;border-radius:16px;padding:34px 30px"><div style="font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:14px">Palette</div><div style="display:flex;gap:10px;flex-wrap:wrap">
+<div style="text-align:center"><div style="width:52px;height:52px;border-radius:10px;background:#0E4A3A"></div><div style="font-family:var(--fm);font-size:9px;margin-top:6px;opacity:.6">0E4A3A</div></div>
+<div style="text-align:center"><div style="width:52px;height:52px;border-radius:10px;background:#E85BA0"></div><div style="font-family:var(--fm);font-size:9px;margin-top:6px;opacity:.6">E85BA0</div></div>
+<div style="text-align:center"><div style="width:52px;height:52px;border-radius:10px;background:#7FC9A6"></div><div style="font-family:var(--fm);font-size:9px;margin-top:6px;opacity:.6">7FC9A6</div></div>
+<div style="text-align:center"><div style="width:52px;height:52px;border-radius:10px;background:#EFECDF;border:1px solid rgba(255,255,255,.15)"></div><div style="font-family:var(--fm);font-size:9px;margin-top:6px;opacity:.6">EFECDF</div></div>
+</div></div>
+<div data-reveal style="background:#083226;border-radius:16px;padding:34px 30px;display:flex;flex-direction:column;justify-content:center"><div style="font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5;margin-bottom:10px">Typeface</div><div style="font-family:var(--fd);font-weight:800;font-size:34px;letter-spacing:-.02em">Friendly grotesk</div><div style="font-family:var(--fd);font-size:15px;opacity:.65;margin-top:4px">Rounded terminals, wide smile — set tight and bold.</div></div>
+</div>
+</div>
+</section>
+
+<section style="background:#EFECDF;padding:120px 0">
+<div class="wrap" style="--wrap:1260px">
+<div data-reveal style="font-family:var(--fm);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#0E7A54;margin-bottom:16px">04 — In the wild</div>
+<h2 data-reveal style="font-family:var(--fd);font-weight:800;font-size:clamp(32px,4.4vw,62px);line-height:.98;letter-spacing:-.03em;max-width:18ch;margin-bottom:50px">From a hanging sign to a story, it always looks like home.</h2>
+</div>
+<div data-reveal style="max-width:1400px;margin:0 auto;padding:0 24px"><div style="border-radius:16px;overflow:hidden"><img src="assets/foodweek-signage.webp" alt="Cairo Food Week signage hanging through the festival venue, from posters to wayfinding" data-lb style="width:100%;height:auto" loading="lazy" decoding="async"></div></div>
+<div data-reveal style="max-width:1400px;margin:24px auto 0;padding:0 24px"><div style="border-radius:16px;overflow:hidden;background:#0a0a0a"><img src="assets/foodweek-social.webp" alt="Cairo Food Week social posts — feed, stories and speaker cards in the festival system" data-lb style="width:100%;height:auto" loading="lazy" decoding="async"></div></div>
+<div data-reveal style="max-width:1400px;margin:24px auto 0;padding:0 24px"><div style="border-radius:16px;overflow:hidden"><img src="assets/foodweek-apps.webp" alt="The system in the wild — panel posters, the main stage screen and pink-drop wayfinding" data-lb style="width:100%;height:auto" loading="lazy" decoding="async"></div></div>
+<div data-reveal style="max-width:1400px;margin:24px auto 0;padding:0 24px"><div style="border-radius:16px;overflow:hidden"><img src="assets/foodweek-metro.webp" alt="We all connect over food — the metro billboard with top-down diners sharing a table" data-lb style="width:100%;height:auto" loading="lazy" decoding="async"></div></div>
+</section>
+
+
+<section data-nextband style="background:#0B0B0B;overflow:hidden">
+<a href="wonderville.html" data-cursor="Next" class="next-band" style="padding:clamp(46px,8vw,104px) var(--pad-x);border-top:4px solid var(--ac);text-decoration:none;color:#F4EDE2;transition:background .35s ease" style-hover="background:#151515">
+<div><div style="font-family:var(--fm);font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.55;margin-bottom:14px">Next project</div><div style="font-family:var(--fd);font-weight:800;font-size:clamp(34px,6vw,88px);letter-spacing:-.03em;line-height:.95">Wonderville</div></div>
+<div style="font-family:var(--fd);font-weight:700;font-size:clamp(30px,4vw,54px);color:var(--ac)">↗</div>
+</a>
+</section>
+<section style="position:relative;background:var(--ac);color:#3A0E29;padding:clamp(90px,13vw,130px) 0 60px;overflow:hidden">
+<div class="grain"></div>
+<div class="wrap" style="--wrap:1120px;position:relative;z-index:2">
+<div data-reveal style="font-family:var(--fm);font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.7;margin-bottom:26px">The takeaway</div>
+<h2 data-reveal style="font-family:var(--fd);font-weight:800;font-size:clamp(40px,6.6vw,104px);line-height:.9;letter-spacing:-.04em;max-width:16ch">Herding a festival's worth of moving parts? I've done it before.</h2>
+<div data-reveal style="display:flex;flex-wrap:wrap;gap:16px;margin-top:44px">
+<a href="https://wa.me/201022966226" data-cursor="Chat" style="display:inline-flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:600;font-size:18px;background:#0E4A3A;color:#EFECDF;padding:18px 32px;border-radius:100px;transition:transform .25s" style-hover="transform:translateY(-3px)">Start a project on WhatsApp ↗</a>
+<a href="./#work" data-cursor="Work" style="display:inline-flex;align-items:center;gap:10px;font-family:var(--fd);font-weight:600;font-size:18px;border:1px solid rgba(58,14,41,.4);color:#3A0E29;padding:18px 32px;border-radius:100px;transition:background .25s" style-hover="background:rgba(58,14,41,.1)">See more work →</a>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:90px;padding-top:26px;border-top:1px solid rgba(58,14,41,.28);font-family:var(--fm);font-size:12px;letter-spacing:.06em">
+<span style="display:flex;align-items:center;gap:8px">Reem Awad <span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M4.2 4.2H19.8V19.8H4.2Z M12 1L23 12L12 23L1 12Z"/></svg></span> Graphic Designer</span>
+<span style="opacity:.7">Cairo Food Week — Case study</span>
+<a href="#" data-cursor="Top" style="border-bottom:1px solid rgba(58,14,41,.5);min-height:44px;display:inline-flex;align-items:center">Back to top ↑</a>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = { tab: 0 };
+    this.cur = React.createRef();
+    this.lbl = React.createRef();
+    this.prog = React.createRef();
+    const SIG = "url('assets/foodweek-signage.webp')";
+    this.T = [
+      { name: 'Posters', img: SIG, pos: '0% 0%', size: '200% 200%', bg: '#083226', cap: '“We talk food” — talk & panel posters' },
+      { name: 'Stage', img: SIG, pos: '100% 0%', size: '200% 200%', bg: '#083226', cap: '“Protect the planet” — main-stage screens' },
+      { name: 'Wayfinding', img: SIG, pos: '0% 100%', size: '200% 200%', bg: '#083226', cap: 'Pink drop-pin signage through the venue' },
+      { name: 'Environment', img: SIG, pos: '100% 100%', size: '200% 200%', bg: '#083226', cap: 'Out-of-home walls across the city' },
+      { name: 'Social', img: "url('assets/foodweek-social.webp')", pos: '50% 50%', size: 'contain', bg: '#050505', cap: 'Feed, stories & speaker cards' }
+    ];
+  }
+  async componentDidMount(){
+    const m = await import('./case-study.js');
+    this._cleanup = m.initChrome({ cur: this.cur, lbl: this.lbl, prog: this.prog }, {});
+  }
+  componentWillUnmount(){ if (this._cleanup) this._cleanup(); }
+  renderVals(){
+    const t = this.T[this.state.tab];
+    return {
+      cursorRef: this.cur, lblRef: this.lbl, progRef: this.prog,
+      tabChips: this.T.map((s, i) => {
+        const on = i === this.state.tab;
+        return { name: s.name, border: on ? 'var(--ac)' : 'rgba(239,236,223,.22)', chipBg: on ? 'var(--ac)' : 'transparent', chipFg: on ? '#fff' : 'rgba(239,236,223,.75)', onClick: () => this.setState({ tab: i }) };
+      }),
+      feImg: t.img, fePos: t.pos, feSize: t.size, feBg: t.bg, feName: t.name, feCap: t.cap
+    };
+  }
+}
+</script>
+</body>
+</html>
