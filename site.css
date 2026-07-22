@@ -18,6 +18,12 @@
 }
 
 /* ---------- small global safety nets ---------- */
+/* iOS Safari silently inflates text inside some blocks ("text autosizing"),
+   which wrecks layouts on a real iPhone while looking fine in every desktop
+   browser at the same width. Pin it. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+/* Belt and braces: nothing should ever scroll the page sideways on a phone. */
+html, body { max-width: 100%; overflow-x: clip; }
 img { max-width: 100%; }
 .mk { display: inline-block; vertical-align: -0.08em; }
 a, button { -webkit-tap-highlight-color: transparent; }
@@ -47,7 +53,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
   .cols { grid-template-columns: 1fr; gap: var(--gap-m, clamp(24px, 6vw, 40px)); }
   .sticky-label { position: static; top: auto; margin-bottom: 18px; }
   .d-only { display: none !important; }
-  .m-only { display: revert !important; }
+  .m-only { display: block !important; }   /* not `revert` — Safari 15.4+ only */
   a.m-only, span.m-only { display: inline-flex !important; }
   div.m-only { display: block !important; }
 }
@@ -87,7 +93,7 @@ html.cc, html.cc * { cursor: none !important; }
   padding-left: max(var(--pad-x), env(safe-area-inset-left));
   padding-right: max(calc(var(--pad-x) - 8px), env(safe-area-inset-right));
   color: #fff; font-family: var(--fm); font-size: 13px; letter-spacing: .06em;
-  transition: padding .3s ease, background .3s ease, backdrop-filter .3s ease;
+  transition: padding .3s ease, background .3s ease, -webkit-backdrop-filter .3s ease, backdrop-filter .3s ease;
   border-bottom: 1px solid transparent;
 }
 .nav.scrolled {
@@ -122,6 +128,9 @@ html.cc, html.cc * { cursor: none !important; }
 
 .mnav {
   position: fixed; inset: 0; z-index: 100002;
+  /* Solid fallback first: color-mix is Safari 16.2+, and without a fallback
+     older iPhones render this overlay with no background at all. */
+  background: #17120E;
   background: color-mix(in srgb, var(--ac) 22%, #12100D);
   color: #F4EDE2;
   display: flex; flex-direction: column;

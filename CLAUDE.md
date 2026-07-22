@@ -21,7 +21,9 @@ Click through: home → each project (work list / fullscreen menu), "Next projec
 - `<project>.html` — 12 case studies with clean hyphenated names (`anti.html`, `cairo-marathon.html`, …).
 - `site.css` — **the shared design system.** Chrome (`.nav`, `.cur`, `.grain`, `.prog`, reveal, curtain), layout primitives (`.wrap`, `.sec`, `.sec-s`, `.cols` with `--cols/--gap/--ai` vars, `.vh`, `.cs-hero`, `.sticky-label`, `.masonry`), the fullscreen menu (`.mnav*`), the lightbox (`.lb*`), flip-card state, and breakpoints (≤860px stack, ≤560px small phones). Pages keep only page-unique styles in their `<helmet>` block.
 - `case-study.js` — shared behavior, imported by every page: `initExtras` (menu, lightbox via `img[data-lb]`, tap-to-flip via `[data-cursor="Flip"]`, curtain link interception, per-page titles) and `initChrome` (scroll state, reveal, progress bar, custom cursor). `PROJECTS` array here is the canonical page registry — update it if pages are added/renamed.
-- `support.js` — the component runtime (`x-dc` templates + React). Generated file; only the two `vendor/` URL constants were customized. It loads `vendor/react.production.min.js` + `react-dom` with SRI hashes.
+- `support.js` — the component runtime (`x-dc` templates + React). Generated file with **two deliberate customizations** (both marked `CUSTOMIZED:` in the source — preserve them if the runtime is ever regenerated):
+  1. The two `vendor/` URL constants, so React is self-hosted (no CDN dependency). SRI hashes must match the files in `vendor/`.
+  2. **Blank-page recovery.** The runtime hides all page content (`x-dc{display:none}`) *before* loading React, and originally just rethrew on failure — so any failed or slow script left visitors on a permanently blank page. `showRawTemplate()` now un-hides the content on failure, plus a 12s watchdog for the case where nothing ever renders. Verified by 404ing react-dom: the page degrades to readable content with working links instead of going blank.
 - `assets/` — WebP imagery (PNG originals were 36 MB; WebP total ~1.7 MB). `assets/og/*.jpg` are 1200×630 link-preview cards; `assets/icons/` favicons + touch icons.
 - `404.html` — standalone on-brand page (no runtime); redirects legacy `"<Name> Case Study.dc.html"` URLs to the new clean names.
 - `manifest.webmanifest`, `sitemap.xml`, `robots.txt`, `.nojekyll`.
@@ -31,6 +33,7 @@ Click through: home → each project (work list / fullscreen menu), "Next projec
 - Layout via classes + CSS vars, not attribute-selector hacks: `class="cols" style="--cols:1.2fr .8fr;--gap:44px"`. Never target `[style*="…"]` — the runtime re-serializes inline styles.
 - Images: WebP, descriptive `alt`, `loading="lazy" decoding="async"` (except the hero, which gets `fetchpriority="high"`), `data-lb` on showcase images to enroll them in the lightbox.
 - Hover-only features need touch equivalents (`hover:hover` media guards; see flip cards / Fit & Fix flashlight).
+- **iOS Safari gotchas** (a narrow desktop window does NOT reproduce these): keep `-webkit-text-size-adjust:100%` in `site.css` or Safari inflates text and breaks layouts on a real iPhone; always pair `backdrop-filter` with `-webkit-backdrop-filter`; give `color-mix()` a solid fallback declaration first (Safari 16.2+); avoid `display:revert` (Safari 15.4+). Test heroes at ~390×664, the small viewport with the toolbars showing.
 - URLs are clean and lowercase; home links from case studies are `./` and `./#work`.
 
 ## Publishing changes

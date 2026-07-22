@@ -4,7 +4,10 @@
     {
       "name": "portfolio",
       "runtimeExecutable": "sh",
-      "runtimeArgs": ["-c", "python3 -m http.server \"${PORT:-8000}\""],
+      "runtimeArgs": [
+        "-c",
+        "cd /tmp && exec python3 -m http.server \"${PORT:-8000}\" --directory /Users/omarelewa/Downloads/site"
+      ],
       "autoPort": true,
       "port": 8000
     }

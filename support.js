@@ -1745,9 +1745,25 @@
   }
 
   // src/index.ts
+  var __rawHideStyle = null;
   function hideRawTemplate() {
     const s = document.createElement("style");
     s.textContent = "x-dc{display:none!important}";
+    document.head.appendChild(s);
+    __rawHideStyle = s;
+  }
+  /* CUSTOMIZED: without this the page hides its own content before React
+     loads, so any failed/slow script left the visitor on a blank page
+     forever. Reveals the raw template as a degraded-but-readable fallback. */
+  function showRawTemplate() {
+    if (__rawHideStyle && __rawHideStyle.parentNode) {
+      __rawHideStyle.parentNode.removeChild(__rawHideStyle);
+    }
+    __rawHideStyle = null;
+    if (document.getElementById("__dc_fallback")) return;
+    const s = document.createElement("style");
+    s.id = "__dc_fallback";
+    s.textContent = "x-dc{display:block!important}sc-for{display:none!important}";
     document.head.appendChild(s);
   }
   function loadScript(src, integrity) {
@@ -1836,6 +1852,13 @@
   hideRawTemplate();
   loadReactUmd().then(init).catch((err) => {
     console.error("[dc] failed to load React or boot:", err);
-    throw err;
+    showRawTemplate();
   });
+  /* CUSTOMIZED: last-resort watchdog. If nothing has rendered after 12s
+     (slow mobile data, blocked script, runtime throw), show the content
+     rather than leaving a blank page. */
+  setTimeout(function () {
+    const root = document.getElementById("dc-root");
+    if (!root || !root.firstChild) showRawTemplate();
+  }, 12e3);
 })();
