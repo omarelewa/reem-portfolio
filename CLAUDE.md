@@ -38,8 +38,19 @@ Click through: home → each project (work list / fullscreen menu), "Next projec
 
 ## Publishing changes
 ```bash
+sh check.sh          # ALWAYS run this first — see below
 git add -A && git commit -m "…" && git push
 ```
+
+**`check.sh` is not optional.** A syntax error inside a page's `data-dc-script`
+block kills every dynamic element on that page (the whole project list, the
+interactive modules) while the static markup keeps rendering — so the page
+still *looks* alive and the failure is easy to miss. This has shipped once
+already: a straight apostrophe inside a single-quoted JS string
+(`story: 'A kids' label…'`) blanked all twelve projects on the home page.
+Use typographic apostrophes (`’`) in those strings. When verifying a page,
+assert on *rendered dynamic output* (project counts, list items), never just
+on the presence of static markup.
 Pages redeploys `main` automatically. If pages are renamed, update: hrefs in `index.html`, `PROJECTS` in `case-study.js`, per-page next-band links, `sitemap.xml`, and the legacy map in `404.html`.
 
 ## Notes
