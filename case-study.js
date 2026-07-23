@@ -5,7 +5,7 @@
 // All shared styling lives in site.css (linked from every page's <head>).
 
 const PROJECTS = [
-  { file: 'anti.html', name: 'anti:' },
+  { file: 'anti.html', name: 'anti:time' },
   { file: 'larz.html', name: 'LARZ Development' },
   { file: 'lait-de-coco.html', name: 'Lait de Coco' },
   { file: 'mother-naked.html', name: 'Mother Naked' },
