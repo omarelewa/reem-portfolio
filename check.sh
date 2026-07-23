@@ -45,6 +45,7 @@ if [ -n "$broken" ]; then echo "$broken" | sed 's/^/   BROKEN /'; fail=1; else e
 echo "4. every page has its head essentials"
 for p in *.html; do
   case "$p" in 404.html) continue;; esac
+  grep -q 'http-equiv="refresh"' "$p" && continue   # skip redirect stubs
   for need in 'lang="en"' 'site.css' 'og:image' 'viewport'; do
     grep -q "$need" "$p" || { printf '   FAIL  %s missing %s\n' "$p" "$need"; fail=1; }
   done

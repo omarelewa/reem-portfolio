@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Reem Awad — Graphic Designer &amp; Art Director</title>
-<meta name="description" content="Reem Awad is a graphic designer and art director in Cairo. Twelve projects: brand identity, packaging, art direction and Arabic type.">
+<meta name="description" content="Reem Awad is a graphic designer and art director in Cairo. Eleven projects: brand identity, packaging, art direction and Arabic type.">
 <link rel="canonical" href="https://omarelewa.github.io/reem-portfolio/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Reem Awad — Graphic Designer &amp; Art Director">
@@ -120,7 +120,7 @@ a.workCardM.m-only{display:block !important}
 <a href="#work" style="display:flex;align-items:center;gap:8px;font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;width:fit-content;min-height:44px"><span style="display:inline-block;animation:bob 2s ease-in-out infinite">↓</span> Scroll for the work</a>
 </div>
 <div class="heroList d-only">
-<div style="font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.55;margin-bottom:12px">The work / 12 projects</div>
+<div style="font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.55;margin-bottom:12px">The work / 11 projects</div>
 <div onMouseLeave="{{ heroLeave }}">
 <sc-for list="{{ heroItems }}" as="b" hint-placeholder-count="12">
 <a href="{{ b.href }}" onMouseEnter="{{ b.enter }}" data-cursor="{{ b.cursor }}" style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;font-family:var(--fd);font-weight:600;font-size:clamp(19px,1.7vw,27px);color:rgba(244,237,226,.72);border-bottom:1px solid rgba(244,237,226,.15);transition:color .2s,padding .3s" style-hover="color:#fff;padding-left:10px">{{ b.name }}<span style="font-family:var(--fm);font-size:11px;opacity:.4">↗</span></a>
@@ -160,7 +160,7 @@ a.workCardM.m-only{display:block !important}
 <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:clamp(34px,6vw,56px)">
 <div>
 <div data-reveal style="font-family:var(--fm);font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.55;margin-bottom:20px"><svg class="mk" viewBox="0 0 24 24" width="10" height="10" fill="currentColor" aria-hidden="true"><path d="M4.2 4.2H19.8V19.8H4.2Z M12 1L23 12L12 23L1 12Z"/></svg> &nbsp;Selected work — 2020 / 2025</div>
-<h2 data-reveal style="font-family:var(--fd);font-weight:800;font-size:clamp(38px,5.2vw,76px);line-height:.95;letter-spacing:-.035em;max-width:18ch">Twelve projects. Mostly client work, a couple my own.</h2>
+<h2 data-reveal style="font-family:var(--fd);font-weight:800;font-size:clamp(38px,5.2vw,76px);line-height:.95;letter-spacing:-.035em;max-width:18ch">Eleven projects. Mostly client work, a couple my own.</h2>
 </div>
 <div data-reveal class="workCap d-only">Hover for a preview. Click to read the whole thing.</div>
 <div data-reveal class="workCap m-only">Tap any project to read it.</div>
@@ -276,8 +276,7 @@ class Component extends DCLogic {
     this.B = [
       { name: 'anti:time', color: '#C24A22', cat: 'Skincare — Branding', year: '2024', word: 'Skincare designed against time', story: 'Anti-aging skincare with an hourglass hidden in the logo. Four products, all lit like late afternoon.', img: 'assets/anti-jars-pink.webp', href: 'anti.html', cta: 'Read the case study ↗', cursor: 'Read' },
       { name: 'LARZ Development', color: '#0B6E82', cat: 'Real estate — Identity', year: '2023', word: 'A new dimension to life', story: 'A developer that wanted to sell a way of living rather than floor plans. The mark is a frame you look through.', img: 'assets/larz-billboard.webp', href: 'larz.html', cta: 'Read the case study ↗', cursor: 'Read' },
-      { name: 'Lait de Coco', color: '#8E2A1B', cat: 'Chocolate — Packaging', year: '2023', word: 'A warm cocoa, in Paris', story: 'A tinted lip balm that behaves like a chocolate bar, right down to the wrapper.', img: 'assets/laitdecoco-bars.webp', href: 'lait-de-coco.html', cta: 'Read the case study ↗', cursor: 'Read' },
-      { name: 'Mother Naked', color: '#C63C7A', cat: 'Body care — Packaging', year: '2023', word: 'Loud, honest body care', story: 'Body care in loud pink and yellow, with scents named like desserts.', img: 'assets/mothernaked.webp', href: 'mother-naked.html', cta: 'Read the case study ↗', cursor: 'Read' },
+      { name: 'Mother Naked', color: '#C63C7A', cat: 'Body & lip care — Packaging', year: '2023', word: 'Loud, honest body care', story: 'Body care in loud pink and yellow, plus Lait de Coco — its cocoa-toned lip line.', img: 'assets/mothernaked.webp', href: 'mother-naked.html', cta: 'Read the case study ↗', cursor: 'Read' },
       { name: 'miniz', color: '#E8432B', cat: 'Kids fashion — Brand world', year: 'SS’24', word: 'mr mini & his gang', story: 'A kids’ label led by a crocodile called mr mini, plus five friends who turn up all over the clothes.', img: 'assets/miniz-hero.webp', href: 'miniz.html', cta: 'Read the case study ↗', cursor: 'Read' },
       { name: 'Cairo Marathon', color: '#0A6FA8', cat: 'Event — Bilingual identity', year: '2022', word: 'Run the whole city', story: 'A bilingual identity where the M runs and the skyline is the finish line.', img: 'assets/marathon-skyline.webp', href: 'cairo-marathon.html', cta: 'Read the case study ↗', cursor: 'Read' },
       { name: 'Fit & Fix', color: '#A50E20', cat: 'Automotive — Identity', year: '2023', word: 'Moving forward, together', story: 'Every kind of car care under one roof. Crimson on black, drawn fast.', img: 'assets/fitfix-red.webp', href: 'fit-and-fix.html', cta: 'Read the case study ↗', cursor: 'Read' },

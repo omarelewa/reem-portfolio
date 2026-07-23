@@ -7,7 +7,6 @@
 const PROJECTS = [
   { file: 'anti.html', name: 'anti:time' },
   { file: 'larz.html', name: 'LARZ Development' },
-  { file: 'lait-de-coco.html', name: 'Lait de Coco' },
   { file: 'mother-naked.html', name: 'Mother Naked' },
   { file: 'miniz.html', name: 'miniz' },
   { file: 'cairo-marathon.html', name: 'Cairo Marathon' },
