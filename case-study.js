@@ -14,6 +14,7 @@ const PROJECTS = [
   { file: 'cairo-food-week.html', name: 'Cairo Food Week' },
   { file: 'wonderville.html', name: 'Wonderville' },
   { file: 'cairo-posters.html', name: 'Cairo Posters' },
+  { file: 'matkolsh-khabarak.html', name: 'متكلش خبرك' },
   { file: 'frank-sol.html', name: 'Frank Sol' },
   { file: 'photography.html', name: 'Photography' }
 ];
